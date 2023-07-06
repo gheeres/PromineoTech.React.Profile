@@ -10,3 +10,6 @@
 .btn-rounded {
   border-radius: 8rem;
 }
+h1 sup,h2 sup,h3 sup,h4 sup,h5 sup,h6 sup {
+  font-size: 0.5em;
+}
