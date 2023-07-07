@@ -2,7 +2,7 @@ import React from "react";
 
 export default class SocialMediaButtons extends React.Component {
   render() {
-    //console.log(this.props);
+    //console.log(`SocialMediaButtons.render()`);
     
     const socialMedia = this.props.items || {};
     const items = Object.getOwnPropertyNames(socialMedia).map((prop,index) => {

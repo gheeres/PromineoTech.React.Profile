@@ -2,6 +2,7 @@ import React from "react";
 
 export default class ProfileAvatar extends React.Component {
   render() {
+    //console.log('ProfileAvatar.render()');
     const url = this.props.image || 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp';
 
     return(

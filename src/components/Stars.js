@@ -35,9 +35,9 @@ export default class Stars extends React.Component {
 
   render() {
     let rating = parseInt(this.props.rating || 0, 10);
+    console.log(`Stars.render(${ rating })`);
     let maxRating = this.props.maxRating || defaultMaxRating;
     let color = this.getColorForRating(rating);
-    console.log(`color=${ color }`);
 
     let items = [];
     for(let i = 1; i <= maxRating; i++) {

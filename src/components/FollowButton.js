@@ -20,8 +20,8 @@ export default class FollowButton extends React.Component {
   }
 
   render() {
+    //console.log(`FollowButton.render()`);
     const followers = this.props.followers;
-    console.log(`followers=${ followers }`);
 
     return(
       <button type="button" onClick={ this.#handleClick } className="btn btn-primary position-relative btn-rounded btn-lg">

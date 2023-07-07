@@ -21,6 +21,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(`App.render()`);
     const rating = this.state.rating;
 
     return (

@@ -19,7 +19,9 @@ export default class Profile extends React.Component {
   }
 
   render() {
-    console.log("Profile.render()");
+    const id = (this.props.person || {}).id || this.props.id;
+    console.log(`Profile.render(${ id })`);
+
     const name = (this.props.person || {}).name || this.props.name;
     const image = (this.props.person || {}).image;
     const socialMedia = (this.props.person || {}).socialMedia;

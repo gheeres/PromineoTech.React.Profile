@@ -22,6 +22,7 @@ export default class ProfileList extends React.Component {
 
   render() {
     let users = this.state.users || [];
+    console.log(`ProfileList.render([...${users.length }])`);
 
     const items = users.map((user) => {
       return(
