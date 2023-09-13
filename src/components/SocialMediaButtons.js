@@ -7,7 +7,7 @@
 //  }
 //}
 
-export default function SocialMediaButtons() {
+export default function SocialMediaButtons(props) {
   return(
     <>
       <button type="button" className="btn btn-outline-primary btn-floating">

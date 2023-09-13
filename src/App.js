@@ -2,17 +2,29 @@ import logo from './logo.svg';
 import React from 'react';
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import Profile from './components/Profile';
+import ProfileList from './components/ProfileList';
+import UserProfileService from './services/UserProfileService';
 
-let george = {
-  lastName: 'Heeres',
-  firstName: 'George',
-  title: 'Software Engineer',
-  emailAddress: 'gheeres@gmail.com',
-  photo: 'ava6-bg.webp'
-}
+const service = new UserProfileService();
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: props.users || []
+    };
+  }
+
+  componentDidMount() {
+    service.all().then(users => {
+      //console.log(users);
+      this.setState({ users: users || [] });
+    });
+  }
+
   render() {
+    console.log(`App.render()`, this.state.users);
+    const users = this.state.users;
+
     //const template = `My name is ${ "Bob" }`;
     const sectionStyle = {
       backgroundColor: '#eee'
@@ -22,9 +34,7 @@ export default class App extends React.Component {
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-12 col-xl-4">
-            <Profile person={ george } />
-            <Profile name="Andrew Smith" title="Alexa Whisperer" photo="ava2-bg.webp" emailAddress="andrew@amazon.com" />
-            <Profile name="Jack George" title="Pickleball God" photo="ava4-bg.webp" emailAddress="jack@pickleballgods.org" />
+            <ProfileList users={ users } />
           </div>
         </div>
       </div>

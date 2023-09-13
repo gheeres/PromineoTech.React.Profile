@@ -10,3 +10,6 @@
 .btn-rounded {
   border-radius: 8rem;
 }
+i.bi-star, i.bi-star-fill {
+  font-size: 3em;
+}
