@@ -1,33 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ProfileList from './components/ProfileList.tsx';
+
+let users = [
+  { id: 1, 
+    lastName: 'Heeres', firstName: 'George',
+    title: 'Instructor',
+    email: 'gheeres@gmail.com',
+    photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp',
+    socialMedia: {
+      facebook: '@gheeres',
+      twitter: '#gheeres',
+      skype: '8675309'
+    },
+    followers: [
+    ]
+  },
+  { id: 2, 
+    lastName: 'Smith', firstName: 'Andrew',
+    title: 'Alexa Whisperer',
+    email: 'asmith@gmail.com',
+    photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp',
+    socialMedia: {
+      facebook: '@asmith'
+    },
+    followers: [
+      'gheeres', 'katie'
+    ]
+  },
+  { id: 3, 
+    lastName: 'Bethke', firstName: 'Jason',
+    title: 'CISCO Engineer',
+    email: 'jbethke@light-net.com',
+    photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp',
+    socialMedia: {
+      twitter: '#jbethke',
+      facebook: '@jbethke'
+    },
+    followers: [
+      'gheeres'
+    ]
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ProfileList users={ users } />
     </>
   )
 }
