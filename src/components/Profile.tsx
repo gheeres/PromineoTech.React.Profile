@@ -2,8 +2,13 @@ import Avatar from "./Avatar";
 import SocialMedia from "./SocialMedia";
 import FollowButton from "./FollowButton";
 
-export default function Profile({ user, ...props }) {
-  function handleFollow(e) {
+import type { User } from "../types";
+
+type ProfileProps = {
+  user: User,
+}
+export default function Profile({ user, ...props }: ProfileProps) {
+  function handleFollow(e: React.MouseEvent) {
     console.log('Profile.handleFollow', e, user);
   }
   

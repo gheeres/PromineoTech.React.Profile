@@ -1,4 +1,10 @@
-export default function SocialMediaStatic({ socialMedia, ...props} : { socialMedia: { facebook: string, twitter: string, skype: string }}) {
+import { SocialMedia } from "../types";
+
+type SocialMediaStaticProps = {
+  socialMedia: SocialMedia,
+};
+
+export default function SocialMediaStatic({ socialMedia, ...props} : SocialMediaStaticProps) {
   return (
     <div className="mb-4 pb-2">
       { socialMedia.facebook    // (condition) ? true : false

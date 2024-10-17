@@ -1,5 +1,10 @@
-export default function FollowButton({ followers, onFollow, ...props }) {
-  function handleFollowClick(e) {
+type FollowButtonProps = {
+  followers?: string[],
+  onFollow: (e: React.MouseEvent) => void,
+};
+
+export default function FollowButton({ followers, onFollow, ...props }: FollowButtonProps) {
+  function handleFollowClick(e: React.MouseEvent) {
     console.log('handleFollowClick()', e);
     if (onFollow) {
       onFollow(e);

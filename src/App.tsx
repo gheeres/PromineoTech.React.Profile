@@ -1,6 +1,7 @@
 import ProfileList from './components/ProfileList.tsx';
+import type { User } from './types.ts';
 
-let users = [
+let users: User[] = [
   { id: 1, 
     lastName: 'Heeres', firstName: 'George',
     title: 'Instructor',
